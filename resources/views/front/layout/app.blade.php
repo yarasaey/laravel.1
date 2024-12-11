@@ -30,7 +30,14 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('/about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('/posts') }}">News</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url('/contact') }}">Contact</a></li>
-                    </ul>
+                        @guest
+                    
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-2 mx-1 py-lg-4 border" href="{{ route('register') }}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-2 mx-1 py-lg-4 border" href="{{ route('login') }}">Login</a></li>
+                        @endguest
+                        @auth
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-2 mx-1 py-lg-4 border" href="{{ route('logout') }}">Logout</a></li>
+                        @endauth
                 </div>
             </div>
         </nav>

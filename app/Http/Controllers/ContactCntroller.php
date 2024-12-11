@@ -13,8 +13,22 @@ class ContactCntroller extends Controller
     
     }
     
-    public function sendMessage(){
-       $data= request()->all();
+    public function sendMessage(Request $request){
+        $request->validate(
+            [
+                'name'=>'required|string|max:15',
+                'email'=>'required|string|max:255',
+                'phone'=>'required|numeric',
+                'content'=>'required|string|max:1000'
+
+        ]
+
+
+
+        );
+
+
+       $data= $request->all();
     
        $message=new Message ;
       $message->name=$data['name'];
