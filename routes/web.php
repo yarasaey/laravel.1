@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactCntroller;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\admin\AdminCategoryController;
 
 
 /*use App\Http\Controllers\SiteController;
@@ -40,6 +41,10 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 //
 Route::get('/admin-home',[AdminHomeController::class,'index'])->name('admin.home');
+Route::get('admin-category',[AdminCategoryController::class,'index'])->name('category.index');
+Route::get('admin-category-create',[AdminCategoryController::class,'create'])->name('category.create');
+//to store category you need post method
+Route::post('admin-category-store',[AdminCategoryController::class,'store'])->name('category.store');
 
 // Route::get('/', function () {
 //     return view('welcome');

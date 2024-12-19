@@ -11,7 +11,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="{{ route('category.index') }}">
           <i class="bi bi-grid"></i>
           <span>Categories</span>
         </a>
