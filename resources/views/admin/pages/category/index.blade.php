@@ -35,21 +35,29 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
-                  
-                  @foreach ( $categories as $category )
+                  @forelse ($categories as $category )
                   <tr>
                     <th scope="row">{{ $category->id }}</th>
                     <td>{{ $category->title }}</td>
                     <td>{{ $category->created_at }}</td>
                     <td>
-                        <a href="" class="btn btn-warning">Edit</a>
+                      <form action="" class="d-inline">
+                        <button  class="btn btn-warning">Edit </button>
+                      </form>
                     </td>
                     <td>
-                        <a href="" class="btn btn-danger">Delete</a>
+                      <form action="{{ route('category.destroy',$category->id) }}"class="d-inline" method='Post'>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
                     </td>
                   </tr>
-                  @endforeach
+                  @empty
+                    <h1> there are no catogries</h1>
+                  @endforelse
+                  
+                 
                   
                    
                   

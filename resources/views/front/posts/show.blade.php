@@ -25,7 +25,26 @@
                 <div>
                 <p>{{ $post->content }}</p>
                 </div>
-                <!-- Pager-->
+                <form action="" method="POST" class="p-4 rounded shadow" style="background-color: #f9f9f9;">
+                    @csrf
+                    <div class="form-group mb-3">
+                        <label for="comment" class="form-label fw-bold" style="font-size: 16px;">Write a Comment</label>
+                        <textarea 
+                            class="form-control" 
+                            id="comment" 
+                            name="comment" 
+                            rows="4" 
+                            placeholder="Type your comment here..." 
+                            style="resize: none;" 
+                            required>
+                        </textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="submit" class="btn btn-primary"value="Add Comment">
+
+                    </div>
+                </form>
+                
              
             </div>
         </div>

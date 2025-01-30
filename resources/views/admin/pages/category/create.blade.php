@@ -39,7 +39,7 @@
                   <div class="col-sm-10">
                     <input class="form-control" type="file" id="formFile" name='image'>
                     @error('image')
-                    <div class="alert alert-danger " >{{ $message }}</div>
+                    <div class="alert alert-danger m-1" >{{ $message }}</div>
                      @enderror
                   </div>
                 </div>

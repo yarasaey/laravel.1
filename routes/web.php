@@ -45,7 +45,7 @@ Route::get('admin-category',[AdminCategoryController::class,'index'])->name('cat
 Route::get('admin-category-create',[AdminCategoryController::class,'create'])->name('category.create');
 //to store category you need post method
 Route::post('admin-category-store',[AdminCategoryController::class,'store'])->name('category.store');
-
+Route::delete('admin-category-destroy/{category}',[AdminCategoryController::class,'destroy'])->name('category.destroy');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

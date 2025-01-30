@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+//use App\Mail\SendVerificationCodeEmail;
+
 
 class AuthController extends Controller
 {
@@ -21,6 +23,8 @@ public function storeuser(Request $request){
         );
         $data['password']=bcrypt($request->password);
         $user=User::create($data);
+        //send email
+    //Mail::to('hama@gmail.com')->send(new SendVerificationCodeEmail());
         Auth::login($user);
         return redirect()->route('home');
 }
